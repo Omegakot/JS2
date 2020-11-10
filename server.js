@@ -6,6 +6,8 @@ const server=http.createServer((req,res)=>{
     res.end(body)
 })
 
+const port = process.env.PORT || 3040
+server.listen(port)
 
 server.listen(3040)
 console.log("Started")
