@@ -3,8 +3,8 @@ const fs=require("fs")
 const server=http.createServer((req,res)=>{
 console.log(req.url)
 const body=req.url==="/css.css"
-? fs.readFileSync(`./lesson8/css.css`)
-: fs.readFileSync(`./lesson8/index.html`)
+? fs.readFileSync(`./Lesson8/css.css`)
+: fs.readFileSync(`./Lesson8/index.html`)
 
     res.end(body)
 })
