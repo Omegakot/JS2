@@ -13,3 +13,8 @@ const port = process.env.PORT || 3050
 server.listen(port)
 
 console.log(`Started on port ${port}`)
+
+// Задание на чтение ыайлов
+const fs = require('fs')
+const text = fs.readFileSync('./package.json', 'utf8')
+console.log(text)
