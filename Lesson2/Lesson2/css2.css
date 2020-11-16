@@ -1,0 +1,23 @@
+.main{
+    
+    border: 1px solid black;
+    margin:0 auto;
+    text-align: center;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    display:flex;
+    
+    
+}
+h1{
+    font-size: 30px;
+}
+.good{
+    margin-top:40px;
+    border: 1px solid black; 
+    margin:30px auto;
+    height:400px;
+    width:400px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: antiquewhite;}
