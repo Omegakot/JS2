@@ -37,7 +37,7 @@ this.price = price
 }
 render () {
 const placeToRender = document.querySelector('.good')
-console.log(placeToRender)
+
 if (placeToRender) {
 const block = document.createElement('div')
 block.innerHTML = `<h3>Товар: ${this.name} = ${this.price}</h3>`
@@ -45,13 +45,20 @@ placeToRender.appendChild(block)
 let btn=document.createElement("button")
 btn.innerText="Добавить в корзину"
 block.appendChild(btn)
-btn.addEventListener("click",(event)=>{
-const main = document.querySelector('.main')
 let div2=document.createElement("div")
+const main = document.querySelector('.main')
+btn.addEventListener("click",(event)=>{
+
+
 div2.innerHTML=`<h3>${this.name} = ${this.plus()}</h3>`
+
 main.appendChild(div2)
+
+
 })
+
 }
+
 }
 }
 const ListInstance = new List()
