@@ -1,20 +1,24 @@
 class List {
 items = []
 constructor () {
-let goods = this.fetchGoods()
-goods = goods.map(cur => {
-return new GoodItem(cur)
+let good = this.fetchGoods()
+good.then(()=>{
+    this.render()  
 })
-this.items.push(...goods)
-this.render()
 }
 fetchGoods () {
-return [
-{ name: 'Shirt', price: 150 },
-{ name: 'Socks', price: 15 },
-{ name: 'Jacket', price: 50 },
-{ name: 'Shoes', price: 1500 },
-]
+let result=fetch('http://localhost:3000/data.json')
+return result
+.then(res=>{
+    return res.json()
+})
+.then(obj=>{
+    console.log(obj)
+    this.items=obj.obj.map(cur => {
+        return new GoodItem(cur)
+        })
+})
+
 }
  render () {
 this.items.forEach(good => {
@@ -37,7 +41,6 @@ this.price = price
 }
 render () {
 const placeToRender = document.querySelector('.good')
-
 if (placeToRender) {
 const block = document.createElement('div')
 block.innerHTML = `<h3>Товар: ${this.name} = ${this.price}</h3>`
@@ -46,19 +49,35 @@ let btn=document.createElement("button")
 btn.innerText="Добавить в корзину"
 block.appendChild(btn)
 let div2=document.createElement("div")
-const main = document.querySelector('.main')
+
+
+
+let b=new Promise(function (resolve,reject){
+resolve(
+
+    
 btn.addEventListener("click",(event)=>{
+div2.innerHTML=`${this.name} = ${this.plus()}`})  )
 
-
-div2.innerHTML=`<h3>${this.name} = ${this.plus()}</h3>`
-
-main.appendChild(div2)
-
-
+reject(console.log("Somewhere error"))
 })
 
-}
+b.then(()=>{
+  
+const main = document.querySelector('.main')
+main.appendChild(div2)
+})
+b.catch("Error")
 
 }
 }
+}
+
 const ListInstance = new List()
+
+
+
+
+
+
+// ${this.name} = ${this.plus()}

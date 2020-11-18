@@ -21,3 +21,13 @@ h1{
     text-align: center;
     border-radius: 10px;
     background-color: antiquewhite;}
+.good1{
+    height:400px;
+    width:400px;
+    border: 1px solid black;
+    opacity:1 
+
+}
+button{
+    cursor: pointer;
+}
