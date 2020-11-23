@@ -46,4 +46,12 @@ let text2="my-t4ts@main.ru"
 let reg=/my+(\.|\-|\S)+\@+[a-z]+\.+ru/g
 let result=text2.match(reg)
 console.log(result)
-// let reg=/{2}.\@\D+\.+ru/g
+
+
+
+
+
+
+  
+
+
